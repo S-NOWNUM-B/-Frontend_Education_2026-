@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task 1</title>
+
+	<style>
+		.highlight {
+			background-color: yellow;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<h1>Imperative Approach</h1>
+	<button id="toggleBtn">Toggle highlight</button>
+	<p id="textPara">This is some text.</p>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#toggleBtn').click(function() {
+				$('#toggleBtn').toggleClass('highlight');
+			});
+		});
+	</script>
+</body>
+</html>
