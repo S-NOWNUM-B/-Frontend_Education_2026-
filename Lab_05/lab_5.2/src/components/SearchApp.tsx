@@ -9,8 +9,9 @@ const INITIAL_USERS: User[] = [
 ];
 
 const SearchApp = () => {
-	const [users] = useState<User[]>(INITIAL_DATA);
+	const [users] = useState<User[]>(INITIAL_USERS);
 	const [searchTerm, setSearchTerm] = useState<string>('');
+	const [filteredUsers, setFilteredUsers] = useState<User[]>(INITIAL_USERS);
 
 	const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const value = event.target.value;
@@ -22,7 +23,7 @@ const SearchApp = () => {
 		setFilteredUsers(filtered);
 	};
 
-	const handleClear = (event: React.MouseEvent<HTMLButtonElement>) => {
+	const handleClear = () => {
 		setSearchTerm('');
 		setFilteredUsers(users);
 	};
@@ -40,9 +41,10 @@ const SearchApp = () => {
 			<div>
 				{filteredUsers.length > 0 ? (
 					filteredUsers.map((u, idx) => (
-						<UserCard key={idx} user={u} />
-						<p>Найден пользователь: {u.name}</p>
-						</Usercard>
+						<div key={idx}>
+							<UserCard user={u} isActive={false} children={undefined} />
+							<p>Найден пользователь: {u.name}</p>
+						</div>
 					))
 				) : (
 					<p>Пользователь не найден</p>
