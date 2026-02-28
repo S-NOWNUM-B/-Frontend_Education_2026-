@@ -3,9 +3,9 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import LoadingSpinner from "./components/LoadingSpinner";
 import ErrorBoundary from "./components/ErrorBoundary";
 
-const Dashboard = lazy(() => import("./pages/Dashboard"));
-const Settings = lazy(() => import("./pages/Settings"));
-const Profile = lazy(() => import("./pages/Profile"));
+const Dashboard = lazy(() => import("./page/Dashboard"));
+const Settings = lazy(() => import("./page/Settings"));
+const Profile = lazy(() => import("./page/Profile"));
 
 const App = () => {
   return (
